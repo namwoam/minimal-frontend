@@ -12,18 +12,22 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
 });
 
-// Custom EV icon
+// Custom EV icon - using SVG for professional look
 const evIcon = new L.divIcon({
-  html: '<div class="custom-ev-marker">⚡</div>',
+  html: `<svg width="32" height="32" viewBox="0 0 24 24" fill="#ff6b35" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+  </svg>`,
   className: 'custom-marker-wrapper',
-  iconSize: [40, 40],
-  iconAnchor: [20, 40],
-  popupAnchor: [0, -40]
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -32]
 });
 
 const selectedEvIcon = new L.divIcon({
-  html: '<div class="custom-ev-marker selected">⚡</div>',
-  className: 'custom-marker-wrapper',
+  html: `<svg width="40" height="40" viewBox="0 0 24 24" fill="#ff6b35" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+  </svg>`,
+  className: 'custom-marker-wrapper selected',
   iconSize: [40, 40],
   iconAnchor: [20, 40],
   popupAnchor: [0, -40]
@@ -68,8 +72,8 @@ function MapView({ vehicles, selectedVehicle, onClose }) {
     <div className="map-overlay">
       <div className="map-container">
         <div className="map-header">
-          <h2>🗺️ Vehicle Locations</h2>
-          <button className="close-btn" onClick={onClose}>✕</button>
+          <h2>Vehicle Locations</h2>
+          <button className="close-btn" onClick={onClose}>×</button>
         </div>
         
         <MapContainer
@@ -95,9 +99,9 @@ function MapView({ vehicles, selectedVehicle, onClose }) {
                 <div className="popup-content">
                   <h3>{vehicle.number}</h3>
                   <div className="popup-info">
-                    <p><strong>👤 Supervisor:</strong> {vehicle.supervisor}</p>
-                    <p><strong>📍 Location:</strong> {vehicle.location.latitude.toFixed(4)}°, {vehicle.location.longitude.toFixed(4)}°</p>
-                    <p><strong>🕐 Updated:</strong> {formatDate(vehicle.lastUpdated)}</p>
+                    <p><strong>Supervisor:</strong> {vehicle.supervisor}</p>
+                    <p><strong>Location:</strong> {vehicle.location.latitude.toFixed(4)}°, {vehicle.location.longitude.toFixed(4)}°</p>
+                    <p><strong>Updated:</strong> {formatDate(vehicle.lastUpdated)}</p>
                   </div>
                 </div>
               </Popup>

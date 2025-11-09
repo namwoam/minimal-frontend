@@ -22,9 +22,9 @@
 }
 
 .map-header {
-  background-color: #646cff;
+  background-color: #ff6b35;
   color: white;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,15 +40,16 @@
   background-color: transparent;
   border: none;
   color: white;
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.25rem 0.5rem;
   line-height: 1;
   transition: background-color 0.2s;
+  font-weight: 300;
 }
 
 .close-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.15);
   border-radius: 4px;
 }
 
@@ -58,29 +59,25 @@
   border: none;
 }
 
-.custom-ev-marker {
-  font-size: 2rem;
-  cursor: pointer;
+.custom-marker-wrapper svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
   transition: transform 0.2s;
-  text-align: center;
-  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
 }
 
-.custom-ev-marker:hover {
-  transform: scale(1.2);
+.custom-marker-wrapper:hover svg {
+  transform: scale(1.1);
 }
 
-.custom-ev-marker.selected {
-  animation: pulse 1.5s infinite;
-  font-size: 2.5rem;
+.custom-marker-wrapper.selected svg {
+  animation: pulse-marker 1.5s infinite;
 }
 
-@keyframes pulse {
+@keyframes pulse-marker {
   0%, 100% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.15);
   }
 }
 
@@ -96,7 +93,7 @@
 }
 
 .popup-content h3 {
-  color: #646cff;
+  color: #ff6b35;
   margin: 0 0 0.75rem 0;
   font-size: 1.2rem;
 }
