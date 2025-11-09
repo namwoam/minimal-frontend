@@ -1,0 +1,69 @@
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #646cff;
+}
+
+.show-map-btn {
+  background-color: #646cff;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: background-color 0.3s;
+}
+
+.show-map-btn:hover {
+  background-color: #535bf2;
+}
+
+.vehicle-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.vehicle-card {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.vehicle-card h3 {
+  color: #646cff;
+  margin-bottom: 0.5rem;
+}
+
+.vehicle-card p {
+  margin-bottom: 1rem;
+  color: #888;
+}
+
+.vehicle-card button {
+  background-color: #535bf2;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.vehicle-card button:hover {
+  background-color: #646cff;
+}
